@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Денис Наталевич](https://up.htmlacademy.ru/react/4/user/1139383).
-* Наставник: `Неизвестно`.
+* Наставник: [Павел Ерастов](https://htmlacademy.ru/profile/id1032917).
 
 ---
 
