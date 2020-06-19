@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Cards from "./cards.jsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Cards from '../cards/cards';
 
 const Main = (props) => {
   const {rentsCount, rentsNames} = props;
-  const cards = <Cards rentsNames = {rentsNames}/>;
 
   return (
     <div className="page page--gray page--main">
@@ -99,7 +98,7 @@ const Main = (props) => {
                 -->
                 */}
               </form>
-              {cards}
+              <Cards rentsNames={rentsNames}/>;
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>

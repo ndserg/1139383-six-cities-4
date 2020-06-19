@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Main from "./main.jsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Main from '../main/main';
 
 const App = (props) => {
 
@@ -8,8 +8,8 @@ const App = (props) => {
 
   return (
     <Main
-      rentsCount = {rentsCount}
-      rentsNames = {rentsNames}
+      rentsCount={rentsCount}
+      rentsNames={rentsNames}
     />
   );
 };

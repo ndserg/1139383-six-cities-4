@@ -1,19 +1,18 @@
-import React from "react";
-import Card from "./card.jsx";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Card from '../card/card';
 
 const Cards = (props) => {
   const {rentsNames} = props;
-  const cards = rentsNames.map((rent, id) => {
-    return <Card
-      key = {id}
-      rentName = {rent}
-    />;
-  });
 
   return (
     <div className="cities__places-list places__list tabs__content">
-      {cards}
+      {rentsNames.map((rent, id) => {
+        return <Card
+          key={id}
+          rentName={rent}
+        />;
+      })}
     </div>
   );
 };
