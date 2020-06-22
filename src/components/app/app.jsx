@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Main from '../main/main';
 
+const headerClickHandler = () => {};
+
 const App = (props) => {
 
   const {rentsCount, rentsNames} = props;
@@ -10,6 +12,7 @@ const App = (props) => {
     <Main
       rentsCount={rentsCount}
       rentsNames={rentsNames}
+      onHeaderClick={headerClickHandler}
     />
   );
 };
