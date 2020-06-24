@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../card/card';
 
 const Cards = (props) => {
-  const {rentsNames} = props;
+  const {rentsNames, onHeaderClick} = props;
 
   return (
     <div className="cities__places-list places__list tabs__content">
@@ -11,6 +11,7 @@ const Cards = (props) => {
         return <Card
           key={id}
           rentName={rent}
+          onHeaderClick={onHeaderClick}
         />;
       })}
     </div>
@@ -18,7 +19,8 @@ const Cards = (props) => {
 };
 
 Cards.propTypes = {
-  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired
+  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onHeaderClick: PropTypes.func.isRequired
 };
 
 export default Cards;
