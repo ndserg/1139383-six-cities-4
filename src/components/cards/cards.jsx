@@ -1,25 +1,41 @@
-import React from 'react';
+import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import Card from '../card/card';
 
-const Cards = (props) => {
-  const {rentsNames, onHeaderClick} = props;
+class Cards extends PureComponent {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="cities__places-list places__list tabs__content">
-      {rentsNames.map((rent, id) => {
-        return <Card
-          key={id}
-          rentName={rent}
-          onHeaderClick={onHeaderClick}
-        />;
-      })}
-    </div>
-  );
-};
+    this.state = {
+      activeOffer: null,
+    };
+  }
+
+
+  render() {
+    const {offers, onHeaderClick} = this.props;
+
+    return (
+      <div className="cities__places-list places__list tabs__content">
+        {offers.map((offer, id) => {
+          return <Card
+            key={id}
+            offer={offer}
+            onHeaderClick={onHeaderClick}
+            onMouseOverCard={(activeCard) => {
+              this.setState({
+                activeOffer: activeCard
+              });
+            }}
+          />;
+        })}
+      </div>
+    );
+  }
+}
 
 Cards.propTypes = {
-  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   onHeaderClick: PropTypes.func.isRequired
 };
 

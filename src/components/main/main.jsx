@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Cards from '../cards/cards';
 
 const Main = (props) => {
-  const {rentsCount, rentsNames, onHeaderClick} = props;
+  const {rentsCount, offers, onHeaderClick} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -99,7 +99,7 @@ const Main = (props) => {
                 */}
               </form>
               <Cards
-                rentsNames={rentsNames}
+                offers={offers}
                 onHeaderClick={onHeaderClick}
               />;
             </section>
@@ -115,7 +115,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   onHeaderClick: PropTypes.func.isRequired
 };
 

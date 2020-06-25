@@ -5,8 +5,20 @@ import Card from "./card";
 it(`Render Card`, () => {
   const tree = renderer
     .create(<Card
-      rentName={`Beautiful & luxurious apartment at great location`}
+      offer={
+        {
+          premiumLabel: true,
+          inBookmarks: false,
+          rating: 80,
+          image: `img/apartment-01.jpg`,
+          price: 120,
+          priceText: `night`,
+          placeName: `Beautiful & luxurious apartment at great location`,
+          placeType: `Apartment`,
+        }
+      }
       onHeaderClick={() => {}}
+      onMouseOverCard={() => {}}
     />)
     .toJSON();
 

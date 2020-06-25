@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Main from '../main/main';
 
-const headerClickHandler = () => {};
+const handleHeaderClick = () => {};
 
 const App = (props) => {
 
-  const {rentsCount, rentsNames} = props;
+  const {rentsCount, offers} = props;
 
   return (
     <Main
       rentsCount={rentsCount}
-      rentsNames={rentsNames}
-      onHeaderClick={headerClickHandler}
+      offers={offers}
+      onHeaderClick={handleHeaderClick}
     />
   );
 };
 
 App.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default App;
