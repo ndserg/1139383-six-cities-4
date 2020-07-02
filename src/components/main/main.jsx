@@ -115,7 +115,16 @@ const Main = (props) => {
 
 Main.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  offers: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    premiumLabel: PropTypes.bool.isRequired,
+    inBookmarks: PropTypes.bool.isRequired,
+    rating: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    priceText: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  })).isRequired,
   onHeaderClick: PropTypes.func.isRequired
 };
 

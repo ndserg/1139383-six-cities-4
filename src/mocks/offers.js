@@ -6,17 +6,17 @@ export default [
     image: `img/apartment-01.jpg`,
     price: 120,
     priceText: `night`,
-    placeName: `Beautiful & luxurious apartment at great location`,
-    placeType: `Apartment`,
+    name: `Beautiful & luxurious apartment at great location`,
+    type: `Apartment`,
   }, {
     premiumLabel: false,
     inBookmarks: true,
-    rating: 80,
+    rating: 50,
     image: `img/room.jpg`,
     price: 80,
     priceText: `night`,
-    placeName: `Wood and stone place`,
-    placeType: `Private room`,
+    name: `Wood and stone place`,
+    type: `Private room`,
   }, {
     premiumLabel: false,
     inBookmarks: false,
@@ -24,8 +24,8 @@ export default [
     image: `img/apartment-02.jpg`,
     price: 132,
     priceText: `night`,
-    placeName: `Canal View Prinsengracht`,
-    placeType: `Apartment`,
+    name: `Canal View Prinsengracht`,
+    type: `Apartment`,
   }, {
     premiumLabel: true,
     inBookmarks: false,
@@ -33,7 +33,7 @@ export default [
     image: `img/apartment-03.jpg`,
     price: 180,
     priceText: `night`,
-    placeName: `Nice, cozy, warm big bed apartment`,
-    placeType: `Apartment`,
+    name: `Nice, cozy, warm big bed apartment`,
+    type: `Apartment`,
   }
 ];
