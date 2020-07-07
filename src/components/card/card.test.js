@@ -1,12 +1,12 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Card from "./card";
-import offers from "../../mocks/offers.js";
+import {OFFERS} from "../../mocks/offers.js";
 
 it(`Render Card`, () => {
   const tree = renderer
     .create(<Card
-      offer={offers[0]}
+      offer={OFFERS[0]}
       onHeaderClick={() => {}}
       onMouseOverCard={() => {}}
     />)

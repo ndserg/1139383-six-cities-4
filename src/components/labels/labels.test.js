@@ -1,13 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app";
-import {OFFERS} from "../../mocks/offers.js";
+import Labels from "./labels";
 
-it(`Render App`, () => {
+it(`Render Labels`, () => {
   const tree = renderer
-    .create(<App
-      rentsCount={4}
-      offers={OFFERS}
+    .create(<Labels
+      label={`Premium`}
     />)
     .toJSON();
 

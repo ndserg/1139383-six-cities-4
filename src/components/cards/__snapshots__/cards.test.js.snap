@@ -212,7 +212,13 @@ exports[`Render Cards 1`] = `
     className="cities__place-card place-card"
     onMouseOver={[Function]}
   >
-    
+    <div
+      className="place-card__mark"
+    >
+      <span>
+        New
+      </span>
+    </div>
     <div
       className="cities__image-wrapper place-card__image-wrapper"
     >
@@ -311,13 +317,7 @@ exports[`Render Cards 1`] = `
     className="cities__place-card place-card"
     onMouseOver={[Function]}
   >
-    <div
-      className="place-card__mark"
-    >
-      <span>
-        Premium
-      </span>
-    </div>
+    
     <div
       className="cities__image-wrapper place-card__image-wrapper"
     >

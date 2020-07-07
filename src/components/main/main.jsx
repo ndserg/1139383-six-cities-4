@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cards from '../cards/cards';
+import {OfferProps} from "../../propTypes.js";
 
-const Main = (props) => {
-  const {rentsCount, offers, onHeaderClick} = props;
+const Main = ({rentsCount, offers, onHeaderClick}) => {
 
   return (
     <div className="page page--gray page--main">
@@ -115,16 +115,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    premiumLabel: PropTypes.bool.isRequired,
-    inBookmarks: PropTypes.bool.isRequired,
-    rating: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-  })).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired,
   onHeaderClick: PropTypes.func.isRequired
 };
 

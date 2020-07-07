@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import Card from '../card/card';
+import {OfferProps} from "../../propTypes.js";
 
-class Cards extends React.PureComponent {
+export default class Cards extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -10,7 +11,9 @@ class Cards extends React.PureComponent {
       activeOffer: null,
     };
 
-    this._handleHover = this._handleHover.bind(this);
+    this.handleHover = (activeCard) => {
+      this.setState({activeOffer: activeCard});
+    };
   }
 
   render() {
@@ -23,30 +26,15 @@ class Cards extends React.PureComponent {
             key={id}
             offer={offer}
             onHeaderClick={onHeaderClick}
-            onMouseOverCard={this._handleHover}
+            onMouseOverCard={this.handleHover}
           />
         ))}
       </div>
     );
   }
-
-  _handleHover(activeCard) {
-    this.setState({activeOffer: activeCard});
-  }
 }
 
 Cards.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    premiumLabel: PropTypes.bool.isRequired,
-    inBookmarks: PropTypes.bool.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-  })).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired,
   onHeaderClick: PropTypes.func.isRequired
 };
-
-export default Cards;

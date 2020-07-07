@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Labels from '../labels/labels';
+import {OfferProps} from "../../propTypes.js";
 
-
-const Card = (props) => {
-  const {offer, onHeaderClick, onMouseOverCard} = props;
+const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
   const {
-    premiumLabel,
+    label,
     inBookmarks,
     rating,
     image,
@@ -29,10 +29,9 @@ const Card = (props) => {
     <article className="cities__place-card place-card"
       onMouseOver={handleHover}>
 
-      {premiumLabel ?
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div> : ``}
+      <Labels
+        label={label}
+      />
 
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
@@ -68,16 +67,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  offer: PropTypes.shape({
-    premiumLabel: PropTypes.bool.isRequired,
-    inBookmarks: PropTypes.bool.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-  }).isRequired,
+  offer: PropTypes.shape(OfferProps).isRequired,
 
   onHeaderClick: PropTypes.func.isRequired,
   onMouseOverCard: PropTypes.func.isRequired

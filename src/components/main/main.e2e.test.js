@@ -2,7 +2,7 @@ import React from "react";
 import Enzyme, {mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Main from "./main";
-import offers from "../../mocks/offers.js";
+import {OFFERS} from "../../mocks/offers.js";
 
 
 Enzyme.configure({
@@ -15,7 +15,7 @@ it(`Should header be clicked`, () => {
   const main = mount(
       <Main
         rentsCount={4}
-        offers={offers}
+        offers={OFFERS}
         onHeaderClick={onHeaderClick}
       />
   );

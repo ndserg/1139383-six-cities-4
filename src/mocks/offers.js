@@ -1,6 +1,14 @@
-export default [
+import {bool, number, string} from 'prop-types';
+
+const labelTypes = {
+  default: `none`,
+  premium: `Premium`,
+  new: `New`
+};
+
+const OFFERS = [
   {
-    premiumLabel: true,
+    label: labelTypes.premium,
     inBookmarks: false,
     rating: 80,
     image: `img/apartment-01.jpg`,
@@ -9,7 +17,7 @@ export default [
     name: `Beautiful & luxurious apartment at great location`,
     type: `Apartment`,
   }, {
-    premiumLabel: false,
+    label: labelTypes.default,
     inBookmarks: true,
     rating: 50,
     image: `img/room.jpg`,
@@ -18,7 +26,7 @@ export default [
     name: `Wood and stone place`,
     type: `Private room`,
   }, {
-    premiumLabel: false,
+    label: labelTypes.new,
     inBookmarks: false,
     rating: 100,
     image: `img/apartment-02.jpg`,
@@ -27,7 +35,7 @@ export default [
     name: `Canal View Prinsengracht`,
     type: `Apartment`,
   }, {
-    premiumLabel: true,
+    label: labelTypes.default,
     inBookmarks: false,
     rating: 60,
     image: `img/apartment-03.jpg`,
@@ -37,3 +45,19 @@ export default [
     type: `Apartment`,
   }
 ];
+
+const OfferProps = {
+  label: string.isRequired,
+  inBookmarks: bool.isRequired,
+  rating: number.isRequired,
+  image: string.isRequired,
+  price: number.isRequired,
+  priceText: string.isRequired,
+  name: string.isRequired,
+  type: string.isRequired
+};
+
+export {
+  OFFERS,
+  OfferProps
+};

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Main from '../main/main';
+import {OfferProps} from "../../propTypes.js";
 
 const handleHeaderClick = () => {};
 
-const App = (props) => {
-
-  const {rentsCount, offers} = props;
+const App = ({rentsCount, offers}) => {
 
   return (
     <Main
@@ -19,16 +18,7 @@ const App = (props) => {
 
 App.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    premiumLabel: PropTypes.bool.isRequired,
-    inBookmarks: PropTypes.bool.isRequired,
-    rating: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    priceText: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-  })).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired
 };
 
 export default App;
