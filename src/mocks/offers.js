@@ -1,12 +1,10 @@
-import {bool, number, string} from 'prop-types';
-
 const labelTypes = {
   default: `none`,
   premium: `Premium`,
   new: `New`
 };
 
-const OFFERS = [
+export const OFFERS = [
   {
     label: labelTypes.premium,
     inBookmarks: false,
@@ -45,19 +43,3 @@ const OFFERS = [
     type: `Apartment`,
   }
 ];
-
-const OfferProps = {
-  label: string.isRequired,
-  inBookmarks: bool.isRequired,
-  rating: number.isRequired,
-  image: string.isRequired,
-  price: number.isRequired,
-  priceText: string.isRequired,
-  name: string.isRequired,
-  type: string.isRequired
-};
-
-export {
-  OFFERS,
-  OfferProps
-};
