@@ -1,25 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Main from '../main/main';
+import {OfferProps} from "../../propTypes.js";
 
-const headerClickHandler = () => {};
+const handleHeaderClick = () => {};
 
-const App = (props) => {
-
-  const {rentsCount, rentsNames} = props;
+const App = ({rentsCount, offers}) => {
 
   return (
     <Main
       rentsCount={rentsCount}
-      rentsNames={rentsNames}
-      onHeaderClick={headerClickHandler}
+      offers={offers}
+      onHeaderClick={handleHeaderClick}
     />
   );
 };
 
 App.propTypes = {
   rentsCount: PropTypes.number.isRequired,
-  rentsNames: PropTypes.arrayOf(PropTypes.string).isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired
 };
 
 export default App;

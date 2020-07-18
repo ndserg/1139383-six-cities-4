@@ -1,12 +1,14 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Card from "./card";
+import {OFFERS} from "../../mocks/offers.js";
 
 it(`Render Card`, () => {
   const tree = renderer
     .create(<Card
-      rentName={`Beautiful & luxurious apartment at great location`}
+      offer={OFFERS[0]}
       onHeaderClick={() => {}}
+      onMouseOverCard={() => {}}
     />)
     .toJSON();
 
