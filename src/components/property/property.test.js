@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Property from "./Property";
+import Property from "./property";
 import {OFFERS} from "../../mocks/offers.js";
 
 it(`Render Property`, () => {
