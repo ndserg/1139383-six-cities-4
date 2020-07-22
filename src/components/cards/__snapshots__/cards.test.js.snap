@@ -25,7 +25,7 @@ exports[`Render Cards 1`] = `
           alt="Place image"
           className="place-card__image"
           height="200"
-          src="img/apartment-01.jpg"
+          src="img/room.jpg"
           width="260"
         />
       </a>
@@ -180,7 +180,7 @@ exports[`Render Cards 1`] = `
           <span
             style={
               Object {
-                "width": "50%",
+                "width": "60%",
               }
             }
           />
@@ -229,7 +229,7 @@ exports[`Render Cards 1`] = `
           alt="Place image"
           className="place-card__image"
           height="200"
-          src="img/apartment-02.jpg"
+          src="img/room.jpg"
           width="260"
         />
       </a>
@@ -328,7 +328,7 @@ exports[`Render Cards 1`] = `
           alt="Place image"
           className="place-card__image"
           height="200"
-          src="img/apartment-03.jpg"
+          src="img/room.jpg"
           width="260"
         />
       </a>
@@ -384,7 +384,7 @@ exports[`Render Cards 1`] = `
           <span
             style={
               Object {
-                "width": "60%",
+                "width": "40%",
               }
             }
           />

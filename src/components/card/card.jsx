@@ -7,8 +7,9 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
   const {
     label,
     inBookmarks,
+    maxRating,
     rating,
-    image,
+    images,
     price,
     priceText,
     name,
@@ -35,7 +36,7 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
 
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={image} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image"/>
         </a>
       </div>
       <div className="place-card__info">
@@ -53,7 +54,7 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: (rating + `%`)}}></span>
+            <span style={{width: ((Math.round(rating) * 100 / maxRating) + `%`)}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
