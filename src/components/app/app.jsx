@@ -9,24 +9,28 @@ class App extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = null;
+    this.state = {
+      activeOffer: null
+    };
+
+    this.onHeaderClick = (activeCard) => {
+      this.setState({activeOffer: activeCard});
+    };
   }
 
   _renderMainPage() {
     const {rentsCount, offers} = this.props;
+    const {activeOffer} = this.state;
 
-    if (this.state === null) {
+    if (activeOffer === null || activeOffer >= offers.length) {
       return (
         <Main
           rentsCount={rentsCount}
           offers={offers}
-          onHeaderClick={(activeCard) => {
-            this.setState({activeOffer: activeCard});
-          }}
+          onHeaderClick={this.onHeaderClick}
         />
       );
     }
-
     return (
       <Property
         offer={this.state.activeOffer}
